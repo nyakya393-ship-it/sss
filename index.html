@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<h2>戦績一覧</h2>
+
+<div id="list"></div>
+
+<script src="./script.js"></script>
+<script>
+function render() {
+  const battles = getBattles();
+
+  document.getElementById("list").innerHTML =
+    battles.map(b => `
+      <div class="card ${b.result}" onclick="openBattle(${b.id})">
+        <div>${b.stage}</div>
+        <div>${b.weapon}</div>
+        <div>${b.kills} / ${b.deaths}</div>
+      </div>
+    `).join("");
+}
+
+function openBattle(id) {
+  location.href = "battle.html?id=" + id;
+}
+
+render();
+</script>
+
+</body>
+</html>

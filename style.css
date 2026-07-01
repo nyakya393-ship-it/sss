@@ -1,0 +1,26 @@
+body {
+  background:#0f0f14;
+  color:white;
+  font-family:sans-serif;
+}
+
+.card {
+  background:#1c1c28;
+  margin:10px;
+  padding:10px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.win { border:2px solid #3cff7a; }
+.lose { border:2px solid #ff4d4d; }
+
+.detail {
+  padding:20px;
+}
+
+input, select, button {
+  display:block;
+  margin:10px;
+  padding:8px;
+}

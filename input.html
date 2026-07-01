@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<h2>戦績入力</h2>
+
+<form id="form">
+
+  <input id="stage" placeholder="ステージ">
+
+  <select id="weapon">
+    <option>スプラシューター</option>
+    <option>プライムシューター</option>
+    <option>.96ガロン</option>
+  </select>
+
+  <input id="sub" placeholder="サブ">
+  <input id="special" placeholder="スペ">
+
+  <input id="kills" type="number" placeholder="キル">
+  <input id="deaths" type="number" placeholder="デス">
+  <input id="paint" type="number" placeholder="塗り">
+
+  <select id="result">
+    <option value="win">WIN</option>
+    <option value="lose">LOSE</option>
+  </select>
+
+  <button>保存</button>
+
+</form>
+
+<script src="./script.js"></script>
+<script>
+document.getElementById("form").onsubmit = e => {
+  e.preventDefault();
+
+  const battles = getBattles();
+
+  battles.push({
+    id: Date.now(),
+    stage: stage.value,
+    weapon: weapon.value,
+    sub: sub.value,
+    special: special.value,
+    kills: +kills.value,
+    deaths: +deaths.value,
+    paint: +paint.value,
+    result: result.value
+  });
+
+  saveBattles(battles);
+
+  location.href = "index.html";
+};
+</script>
+
+</body>
+</html>
